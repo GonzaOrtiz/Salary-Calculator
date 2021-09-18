@@ -1,7 +1,7 @@
 import shortid from "shortid";
 import { Technology } from "./technology.entity";
-import { SeniorityEnum } from "../enums/seniority.enum";
-import { LanguageEnum } from "../enums/language.enum";
+import SeniorityEnum from "../enums/seniority.enum";
+import LanguageEnum from "../enums/language.enum";
 
 class Rate {
   private id: string;
