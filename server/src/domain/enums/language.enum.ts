@@ -1,4 +1,6 @@
 enum LanguageEnum {
     english = 1,
-    spanish
+    spanish = 2
 }
+
+export default LanguageEnum;
