@@ -26,6 +26,13 @@ class RateRepository {
 
         return (rate) ? rate : null;
     }
+    async findAllBy(technologyIds: [],
+        seniority?: string,
+        language?: string,
+        currency?: string){
+
+    } 
+
 
     async findOneBySeniority(seniority: SeniorityEnum): Promise<Rate | null> {
         const rate = this.rates.find(r => r.getSeniority() === seniority);
