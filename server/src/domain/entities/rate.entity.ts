@@ -35,7 +35,7 @@ class Rate {
   public getSeniority(): SeniorityEnum {
     return this.seniority;
   }
-  public getTechnologyId(): Technology {
+  public getTechnology(): Technology {
     return this.technology;
   }
   public getLanguage(): LanguageEnum {
