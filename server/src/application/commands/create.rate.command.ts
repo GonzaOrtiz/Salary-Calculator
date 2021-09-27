@@ -24,23 +24,24 @@ export class CreateRateCommand {
         this.currency = currency;
     }
 
-    public getSeniority(): string {
-        return this.getSeniority();
-    }
     public getTechnologyId(): string {
-        return this.getTechnologyId();
+        return this.technologyId;
     }
-    public getLanguage(): string {
-        return this.getLanguage();
+    public getSeniority(): SeniorityEnum {
+        return this.seniority;
+    }
+
+    public getLanguage(): LanguageEnum {
+        return this.language;
     }
     public getAverageSalary(): string {
-        return this.getAverageSalary();
+        return this.average_salary;
     }
     public getGrossMargin(): string {
-        return this.getGrossMargin();
+        return this.gross_margin;
     }
     public getCurrency(): string {
-        return this.getCurrency();
+        return this.currency;
     }
 
 }
