@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Rate } from "../../../domain/entities/rate.entity";
+import Rate  from "../../domain/entities/rate.entity";
 import RateRepository from "../../../infrastructure/repositories/rate.repository";
 
 class ListRatesAction {
