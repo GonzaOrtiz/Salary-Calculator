@@ -1,7 +1,4 @@
 import Rate from "../../domain/entities/rate.entity";
-import Technology from "../../domain/entities/technology.entity";
-import LanguageEnum from "../../domain/enums/language.enum";
-import SeniorityEnum from "../../domain/enums/seniority.enum";
 
 class RateRepository {
     private rates: Rate[];
@@ -26,45 +23,30 @@ class RateRepository {
 
         return (rate) ? rate : null;
     }
-    async findAllBy(technologyIds: [],
+    async findAllBy(technologyIds?: [],
         seniority?: string,
         language?: string,
         currency?: string){
+        
+            let query;
 
+        if(technologyIds){
+            query;
+        }
+
+        if(seniority){
+            query;
+        }
+        
+        if(language){
+            query;
+        }
+
+        if(currency){
+            query;
+        }
     } 
 
-
-    async findOneBySeniority(seniority: SeniorityEnum): Promise<Rate | null> {
-        const rate = this.rates.find(r => r.getSeniority() === seniority);
-
-        return (rate) ? rate : null;
-    }
-    async findOneByLanguage(language: LanguageEnum): Promise<Rate | null> {
-        const rate = this.rates.find(r => r.getLanguage() === language);
-
-        return (rate) ? rate : null;
-    }
-    async findOneByTechnology(technology: Technology): Promise<Rate | null> {
-        const rate = this.rates.find(r => r.getTechnology() === technology);
-
-        return (rate) ? rate : null;
-    }
-    async findOneByAverageSalary(averageSalary: string): Promise<Rate | null> {
-        const rate = this.rates.find(r => r.getAverageSalary() === averageSalary);
-
-        return (rate) ? rate : null;
-    }
-    async findOneGrossMargin(grossMargin: string): Promise<Rate | null> {
-        const rate = this.rates.find(r => r.getGrossMargin() === grossMargin);
-
-        return (rate) ? rate : null;
-    }
-
-    async findOneCurrency(currency: string): Promise<Rate | null> {
-        const rate = this.rates.find(r => r.getCurrency() === currency);
-
-        return (rate) ? rate : null;
-    }
 
 }
 
