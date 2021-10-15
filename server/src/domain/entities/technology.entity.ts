@@ -7,11 +7,11 @@ class Technology {
     constructor(name: string) {
         this.id = shortid.generate();
         this.name = name;
-      }
+    }
 
-      public getId(): string {
+    public getId(): string {
         return this.id;
-      }
+    }
     public getName(): string {
         return this.name;
     }
