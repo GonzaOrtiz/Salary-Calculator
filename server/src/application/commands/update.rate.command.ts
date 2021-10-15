@@ -13,14 +13,14 @@ class UpdateRateCommand {
   private gross_margin: string;
   private currency: string;
 
-  constructor(technology: Technology,
+  constructor(id: string, technology: Technology,
     seniority: SeniorityEnum,
     language: LanguageEnum,
     average_salary: string,
     gross_margin: string,
     currency: string) 
   {
-    this.id = shortid.generate();
+    this.id = id;
     this.technology = technology;
     this.seniority = seniority;
     this.language = language;
