@@ -1,9 +1,10 @@
 import shortid from "shortid";
-import  Technology from "./technology.entity";
-import SeniorityEnum from "../enums/seniority.enum";
-import LanguageEnum from "../enums/language.enum";
+import  Technology from "../../domain/entities/technology.entity"
+import LanguageEnum from "../../domain/enums/language.enum";
+import SeniorityEnum from "../../domain/enums/seniority.enum";
 
-class Rate {
+
+class UpdateRateCommand {
   private id: string;
   private technology: Technology;
   private seniority: SeniorityEnum;
@@ -51,18 +52,6 @@ class Rate {
     return this.currency;
   }
 
-
-  public total(): string {
-    let result;
-    result = parseFloat(this.gross_margin) + parseFloat(this.average_salary);
-    return result.toString();
-  }
-
-  public percentage(): string {
-    let result;
-    result = parseFloat(this.gross_margin) / parseFloat(this.total());
-    return result.toString();
-  }
 }
 
-export default Rate;
+export default UpdateRateCommand;
