@@ -1,17 +1,20 @@
-import  Rate  from "../../domain/entities/rate.entity";
-import CreateRateCommand from "../commands/create.rate.command";
+import UpdateRateCommand from "../commands/update.rate.command";
 import RateRepository from "../../infrastructure/repositories/rate.repository";
 
-/*class UpdateRateHandler {
-   async execute(command: ) {
-       const user = await ().findOneById();
+class UpdateRateHandler {
+    async execute(command: UpdateRateCommand) {
+        const rate = await RateRepository.findOneById(command.getId());
 
-        if () {
-            throw new Error();
-        } 
+        if (!rate) {
+            throw new Error('Rate not found');
+        }
+        else {
+            rate.setAverageSalary(command.getAverageSalary());
+            rate.setGrossMargin(command.getGrossMargin());
 
-       // await userRepository.save(user);
+            await RateRepository.save(rate);
+        }
     }
-} */
+}
 
 export default new UpdateRateHandler();

@@ -1,5 +1,4 @@
-import shortid from "shortid";
-import  Technology from "../../domain/entities/technology.entity"
+import Technology from "../../domain/entities/technology.entity"
 import LanguageEnum from "../../domain/enums/language.enum";
 import SeniorityEnum from "../../domain/enums/seniority.enum";
 
@@ -29,7 +28,6 @@ class UpdateRateCommand {
     this.currency = currency;
   }
 
-
   public getId(): string {
     return this.id;
   }
@@ -51,7 +49,6 @@ class UpdateRateCommand {
   public getCurrency(): string {
     return this.currency;
   }
-
 }
 
 export default UpdateRateCommand;

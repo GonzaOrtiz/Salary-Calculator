@@ -44,8 +44,14 @@ class Rate {
   public getAverageSalary(): string {
     return this.average_salary;
   }
+  public setAverageSalary(value: string){
+    this.average_salary = value;
+  }
   public getGrossMargin(): string {
     return this.gross_margin;
+  }
+  public setGrossMargin(value: string){
+    this.gross_margin = value;
   }
   public getCurrency(): string {
     return this.currency;
