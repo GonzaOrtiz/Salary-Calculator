@@ -15,7 +15,7 @@ class UpdateRateAction {
             return res.status(404).json({message: error});
         }
 
-        return res.status(200).json({message: "User updated"});
+        return res.status(200).json({message: "Rate updated"});
     }
 }
 
