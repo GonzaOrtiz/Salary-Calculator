@@ -4,7 +4,13 @@ class TechnologyRepository {
     private technologies: Technology[];
 
     constructor() {
-        this.technologies = [];
+        this.technologies = [
+            new Technology("java"),
+            new Technology("javascript"),
+            new Technology("C++")
+        ];
+
+        console.log(this.technologies);
     }
 
     async findOneById(id: string): Promise<Technology | null> {
