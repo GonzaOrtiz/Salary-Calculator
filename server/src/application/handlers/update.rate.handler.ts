@@ -9,10 +9,11 @@ class UpdateRateHandler {
             throw new Error('Rate not found');
         }
         else {
+            
             rate.setAverageSalary(command.getAverageSalary());
             rate.setGrossMargin(command.getGrossMargin());
 
-            await RateRepository.save(rate);
+            await RateRepository.update(rate);
         }
     }
 }

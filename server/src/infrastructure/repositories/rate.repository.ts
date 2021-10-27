@@ -15,7 +15,9 @@ class RateRepository {
     }
 
     async update(rate: Rate): Promise<void> {
-        this.rates.push(rate);
+        this.rates = this.rates.map(function(r) {
+            return r.getId() === rate.getId() ? rate : r;
+        });
     }
 
     async deleteById(id: string): Promise<void> {
