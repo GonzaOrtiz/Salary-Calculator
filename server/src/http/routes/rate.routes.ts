@@ -13,6 +13,8 @@ class RateRoutes extends CommonRoutes {
   setUpRoutes(): Application {
     this.app.get('/rates', ListRatesAction.run);
 
+    this.app.get('/rates/:id', ListRatesAction.run);
+
     this.app.post('/rates', createRatesAction.run);
 
     this.app.put('/rates/:id', updateRatesAction.run);

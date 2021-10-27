@@ -12,7 +12,8 @@ class UpdateRateCommand {
   private gross_margin: string;
   private currency: string;
 
-  constructor(id: string, technology: Technology,
+  constructor(id: string,
+    technology: Technology,
     seniority: SeniorityEnum,
     language: LanguageEnum,
     average_salary: string,

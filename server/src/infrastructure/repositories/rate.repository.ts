@@ -14,6 +14,10 @@ class RateRepository {
             this.rates.push(rate);
     }
 
+    async update(rate: Rate): Promise<void> {
+        this.rates.push(rate);
+    }
+
     async deleteById(id: string): Promise<void> {
         this.rates = this.rates.filter(u => u.getId() !== id);
     }
