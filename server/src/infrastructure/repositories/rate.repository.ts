@@ -29,30 +29,32 @@ class RateRepository {
 
         return (rate) ? rate : null;
     }
-    async findAllBy(technologyIds?: [],
+
+    async findAllBy(technologyIds?: string[],
         seniority?: string,
         language?: string,
-        currency?: string){
+        currency?: string): Promise<Rate[]>{
         
-            let query;
+            let query = this.rates;
 
         if(technologyIds){
-            query;
+            query = query.filter(u => technologyIds.includes(u.getTechnology().getId()))
         }
 
         if(seniority){
-            query;
+            query = query.filter(u => u.getSeniority().toString() === seniority);
         }
         
         if(language){
-            query;
+            query = query.filter(u => u.getLanguage().toString() === language);
         }
 
         if(currency){
-            query;
+            query = query.filter(u => u.getCurrency().toString() === currency);
         }
-    } 
 
+        return query;
+    } 
 
 }
 
