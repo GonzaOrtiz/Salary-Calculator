@@ -15,6 +15,9 @@ class Technology {
     public getName(): string {
         return this.name;
     }
+    public setName(value: string): string {
+        return this.name = value;
+    }
 }
 
 export default Technology;

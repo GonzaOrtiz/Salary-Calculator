@@ -5,9 +5,9 @@ class TechnologyRepository {
 
     constructor() {
         this.technologies = [
-            new Technology("java"),
-            new Technology("javascript"),
-            new Technology("C++")
+            // new Technology("java"),
+            // new Technology("javascript"),
+            // new Technology("C++")
         ];
 
         console.log(this.technologies);
@@ -31,6 +31,11 @@ class TechnologyRepository {
 
     async save(technology: Technology): Promise<void> {
         this.technologies.push(technology);
+    }
+    async update(technology: Technology): Promise<void> {
+        this.technologies = this.technologies.map(function(t) {
+            return t.getId() === technology.getId() ? technology : t;
+        });
     }
 
     async deleteById(id: string): Promise<void> {
