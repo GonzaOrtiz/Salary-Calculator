@@ -14,9 +14,10 @@ class TechnologyRepository {
     }
 
     async findOneById(id: string): Promise<Technology | null> {
-        const technology = this.technologies.find(t => t.getId() === id);
+        const technology = this.technologies.find(t => t.getId() !== id);
 
         return (technology) ? technology : null;
+
     }
 
     async findOneByName(name: string): Promise<Technology | null> {

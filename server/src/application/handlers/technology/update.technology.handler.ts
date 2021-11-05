@@ -6,7 +6,7 @@ class UpdateTechnologyHandler {
         const technology = await technologyRepository.findOneById(command.getId());
 
         if (!technology) {
-            throw new Error('Technology not found' + command.getId() + command.getName());
+            throw new Error('Technology not found');
         }
         else {
             

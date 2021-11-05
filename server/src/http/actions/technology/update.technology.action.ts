@@ -5,15 +5,15 @@ import updateTechnologyHandler from "../../../application/handlers/technology/up
 class UpdateTechnologyAction {
     async run(req: Request, res: Response) {
         const command: UpdateTechnologyCommand = new UpdateTechnologyCommand (
-            req.body.id,
             req.body.name,
+            req.body.id,
         );
 
         try {
             await updateTechnologyHandler.execute(command);
         } catch (error) {
             console.info(error);
-            return res.status(404).json({message: error});
+            return res.status(404).json({message: error });
         }
 
         return res.status(200).json({message: "Technology updated"});
