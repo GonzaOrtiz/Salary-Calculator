@@ -6,13 +6,13 @@ class CreateTechnologyHandler {
 
     async execute(command: CreateTechnologyCommand) {
 
-        //Validar si existe
-        // if (!technology) {
-        //     throw new Error('Technology not found');
-        // }
-        const technogloy: Technology = new Technology(command.getName());
+ 
+        if (await TechnologyRepository.findOneByName(command.getName())) {
+            throw new Error('Technology not found');
+        }
+        const technology: Technology = new Technology(command.getName());
 
-        await TechnologyRepository.save(technogloy);
+        await TechnologyRepository.save(technology);
     }
 }
 

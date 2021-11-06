@@ -21,7 +21,17 @@ class CreateRateAction {
                 return res.status(400).json({message: "Required fields"})
         }
 
-        await createRateHandler.execute(command);
+
+        try{
+            await createRateHandler.execute(command);
+        }catch(error){
+            console.error(error);
+            return res.status(404).json({message: error + " Esta Rate ya ha sido creado"});
+        }
+
+
+
+        
 
         return res.status(201).json({message: "Rate created"});
     }

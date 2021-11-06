@@ -13,8 +13,13 @@ class CreateTechnologyAction {
             
                 return res.status(400).json({message: "Required fields"})
         }
+        try{
 
-        await CreateTechnologyHandler.execute(command);
+            await CreateTechnologyHandler.execute(command);
+        }catch(error){
+            console.error(error);
+            return res.status(404).json({message: error + "Esta tecnologia ya ha sido creada"});
+        }
 
         return res.status(201).json({message: "Technology created"});
     }

@@ -1,4 +1,6 @@
 import Rate from "../../domain/entities/rate.entity";
+import LanguageEnum from "../../domain/enums/language.enum";
+import SeniorityEnum from "../../domain/enums/seniority.enum";
 
 class RateRepository {
     private rates: Rate[];
@@ -30,6 +32,11 @@ class RateRepository {
         return (rate) ? rate : null;
     }
 
+    async findOneBySeniority(seniority: SeniorityEnum): Promise<Rate | null> {
+        const rate = this.rates.find(t => t.getSeniority() === seniority);
+
+        return (rate) ? rate : null;
+    }
     async findAllBy(technologyIds?: string[],
         seniority?: string,
         language?: string,
@@ -55,6 +62,15 @@ class RateRepository {
 
         return query;
     } 
+
+    async exists(technologyId: string, seniority: SeniorityEnum,
+        LanguageEnum: LanguageEnum, currency: string ): Promise<boolean>{
+
+        return  this.rates.some(r => r.getSeniority() == seniority 
+        &&  r.getLanguage() == LanguageEnum
+        && r.getCurrency() == currency
+        && r.getTechnology().getId() == technologyId);
+    }
 
 }
 

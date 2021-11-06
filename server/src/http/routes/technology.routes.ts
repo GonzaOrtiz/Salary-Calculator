@@ -13,7 +13,7 @@ class TechnologyRoutes extends CommonRoutes {
   setUpRoutes(): Application {
     this.app.get('/technologies', ListTechnologiesAction.run);
 
-    this.app.get('/technologies/:id', ListTechnologiesAction.run);
+
     this.app.put('/technologies/:id', updateTechnologyAction.run);
 
     this.app.post('/technologies', CreateTechnologyAction.run);
