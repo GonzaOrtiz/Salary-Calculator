@@ -49,15 +49,15 @@ class RateRepository {
         }
 
         if(seniority){
-            query = query.filter(u => u.getSeniority().toString() === seniority);
+            query = query.filter(u => seniority.includes(u.getSeniority().toString()))
         }
         
         if(language){
-            query = query.filter(u => u.getLanguage().toString() === language);
+            query = query.filter(u => language.includes(u.getLanguage().toString()))
         }
 
         if(currency){
-            query = query.filter(u => u.getCurrency().toString() === currency);
+            query = query.filter(u => currency.includes(u.getCurrency().toString()))
         }
 
         return query;
